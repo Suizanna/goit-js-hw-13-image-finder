@@ -13,14 +13,15 @@ const inputRef = document.querySelector('input');
 
 let pageNumber = 1;
 
+
 formRef.addEventListener('submit', event => {
     event.preventDefault();
-    //начинаем новый запрос с 1 страницы
+    //начинаем новый запрос с 1 стр
      pageNumber = 1; 
     //очищаем при новом запросе
     galleryRef.innerHTML = '';
     //получаем картинки
-    fetchPictures(pageNumber, inputRef.value).then(renderPictures);
+    fetchPictures(pageNumber, inputRef.value).then(renderPictures);//наш fetch
 });
 
 //рендерим картинки
