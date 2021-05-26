@@ -13,14 +13,14 @@ const inputRef = document.querySelector('input');
 
 let pageNumber = 1;
 
-//событие происход на форме. target-ом будет форма. у формы нет value event.target[0].value
 formRef.addEventListener('submit', event => {
     event.preventDefault();
-    //начинаем новый запрос с 1 стр
+    //начинаем новый запрос с 1 страницы
      pageNumber = 1; 
     //очищаем при новом запросе
     galleryRef.innerHTML = '';
-    fetchPictures(pageNumber, inputRef.value).then(renderPictures);//наш fetch
+    //получаем картинки
+    fetchPictures(pageNumber, inputRef.value).then(renderPictures);
 });
 
 //рендерим картинки
