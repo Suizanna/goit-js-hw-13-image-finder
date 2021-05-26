@@ -38,7 +38,7 @@ function renderPictures(data) {
 buttonRef.addEventListener('click', () => {
     pageNumber += 1;
     //наши картинки
-    fetchPicture(pageNumber, inputRef.value).then(renderPictures);
+    fetchPictures(pageNumber, inputRef.value).then(renderPictures);
 });
 
 //модалка
