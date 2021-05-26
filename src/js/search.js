@@ -41,7 +41,6 @@ buttonRef.addEventListener('click', () => {
     fetchPicture(pageNumber, inputRef.value).then(renderPictures);
 });
 
-
 //модалка
 galleryRef.addEventListener('click', (event) => {
     if (event.target.nodeName !== 'IMG') {
