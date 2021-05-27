@@ -9,8 +9,10 @@
   href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 <body>
+  <div class="search">
   <form class="search-form" id="search-form">
     <input
+    class="search-input" 
       type="text"
       name="query"
       autocomplete="off"
@@ -18,10 +20,14 @@
     />
     <button class="search-btn" type="submit">Search</button>
   </form>
+</div>
   
   <ul class="gallery">
     <!-- Список <li> с карточками изображений -->
   </ul>
-  <button type="button" class="load-more">Load more</button>
+
+  <div class="loadbtn-container">
+  <button type="button" class="load-more is-hidden">Load more</button>
+</div>
 </body>
 </html>
