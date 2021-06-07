@@ -12,18 +12,22 @@ const galleryRef = document.querySelector('.gallery');
 const buttonRef = document.querySelector('.load-more');
 const inputRef = document.querySelector('input');
 
-let pageNumber = 1;
+// loadMoreBtn: document.querySelector('.load-more'),
+const upBtn = document.querySelector('.up-btn');
+const body = document.body;
+
+let page = 1;
 
 formRef.addEventListener('submit', onSearch);
   
 function onSearch(event) {
     event.preventDefault();
     //начинаем новый запрос с 1 стр
-     pageNumber = 1; 
+     page = 1; 
     //очищаем при новом запросе
     galleryRef.innerHTML = '';
     //получаем картинки
-    fetchPictures(pageNumber, inputRef.value).then(renderPictures);
+    fetchPictures(page, inputRef.value).then(renderPictures);
 }
 
 //рендерим картинки
@@ -34,41 +38,58 @@ function renderPictures(data) {
       }
       //картинки
     galleryRef.insertAdjacentHTML('beforeend', picturesTpl(data));
-    //кнопку load-more
-    if (data.length < 12) {
-        buttonRef.classList.add('is-hidden');
-      } else {
-        buttonRef.classList.remove('is-hidden');
-      }
-    
-    window.scrollTo(  //не работает
-        {
-            top: scrollHeight,
-            left: 0,
-            behavior: 'smooth',
-        });          
-        
+    //кнопку load-more если is-hidden. 12 картинок
+    // if (data.length < 12) {
+    //     buttonRef.classList.add('is-hidden');
+    //   } else {
+    //     buttonRef.classList.remove('is-hidden');
+    //   }
+ //кнопку load-more.
+      buttonRef.classList.add('show');
+      // кнопка up 
+      upBtn.classList.add('show');
+
+      body.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+        });        
+
 }
 
 //увечиваем на 1 стр
 buttonRef.addEventListener('click', () => {
-    if(  pageNumber > 1 ) {
-      pageNumber += 1;
+    if(  page > 1 ) {
+      page += 1;
     }
     //наши картинки
-    fetchPictures(pageNumber, inputRef.value).then(renderPictures);
+    fetchPictures(page, inputRef.value).then(renderPictures);
 });
 
 //модалка
 galleryRef.addEventListener('click', (event) => {
-    if (event.target.nodeName !== 'IMG') {
-        return;
+  const modal = basicLightbox  //объект это
+  .create(`
+  <img src=${event.target.dataset.source} width="800" height="600">
+`)
+    if (event.target.nodeName === 'IMG') {
+      modal.show();
     }
-    basicLightbox  //объект
-    .create(`
-    <img src=${event.target.dataset.source} width="800" height="600">
-`).show()
+    
+// Escape
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    modal.close();
+  };
+});
 
+})
+
+// up
+upBtn.addEventListener('click', () => {
+ body.scrollIntoView({
+  behavior: 'smooth',
+  block: 'start',
+  });
 })
 
 

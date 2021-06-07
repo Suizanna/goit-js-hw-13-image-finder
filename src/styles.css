@@ -51,14 +51,27 @@ ul {
   text-align: center;
 }
 
-.load-more-button {
+.load-more {
+  display: none;
   border: transparent;
   border-radius: 4px;
   font-size: 20px;
 }
+
 
 .material-icons {
   margin-right: 5px;
   color: dodgerblue;
 }
 
+/* кнопка up */
+.up-btn {
+  display: none;
+  font-size: 22px;
+  float: right;
+  margin-right: 0px;
+  clear: left;
+}
+.show {
+  display: inline-block;
+}
