@@ -11,3 +11,4 @@ export default function fetchPictures(page, query) {
  .then(response => response.data.hits);
 
 }
+

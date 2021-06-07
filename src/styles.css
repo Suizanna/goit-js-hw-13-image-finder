@@ -27,16 +27,13 @@ ul {
 } */
 
 .search-form {
-  display: flex;
+  display: flex;  /*input в центр и search-btn*/
   justify-content: center;
-  margin-bottom: 50px; /* отступ до картинок */
+  margin-bottom: 50px;  /* отступ до картинок */
 }
 
 .search-input {
   margin-right: 10px;
-  /* font-size: 30px;
-  border: 1px solid #cecece; */
-
   width: 300px;
   font-size: 30px;
   padding: 6px 0 4px 10px;
@@ -47,35 +44,6 @@ ul {
 input:focus {
   outline: none;
   border: 3px solid #3498db;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-/*  
- .gallery {
-  display: grid;
-  justify-content: center;
-  column-gap: 15px;
-  grid-template-columns: repeat(auto-fit, 300px);
-}  */
-
-
-
-.stats {
-  display: flex;
-  justify-content: space-between;
-  /* align-items: baseline; */
-}
-.stats-item {
-  display: flex;
-}
-
-.material-icons {
-  margin-right: 2px;
-  color: dodgerblue;
 }
 
 button {
@@ -92,8 +60,8 @@ button {
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  /* color: #fff; */
-  /* box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db; */
+  /* color: #fff; 
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;  */
   transition: all 150ms ease-in-out;
 }
 
@@ -101,6 +69,35 @@ button:hover {
   box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
   color: #5c5c5c;
 }
+
+/* .gallery { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} */
+ 
+ .gallery {
+  display: grid;
+  justify-content: center;
+  column-gap: 15px;
+  grid-template-columns: repeat(auto-fit, 300px);
+} 
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: baseline; */
+}
+.stats-item {
+  display: flex;
+}
+
+.material-icons {
+  margin-right: 2px;
+  color: dodgerblue;
+}
+
+
 .loadbtn-container {
   text-align: center;
 }
