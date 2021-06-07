@@ -69,7 +69,7 @@ buttonRef.addEventListener('click', () => {
 galleryRef.addEventListener('click', (event) => {
   const modal = basicLightbox  //объект это
   .create(`
-  <img src=${event.target.dataset.source} width="800" height="600">
+  <img src=${event.target.dataset.source} width="1280" height="800">
 `)
 
     if (event.target.nodeName === 'IMG') {

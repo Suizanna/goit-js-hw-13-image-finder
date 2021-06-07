@@ -29,7 +29,7 @@ ul {
 .search-form {
   display: flex;  /*input в центр и search-btn*/
   justify-content: center;
-  margin-bottom: 50px;  /* отступ до картинок */
+  margin-bottom: 5px;  /* отступ до картинок */
 }
 
 .search-input {
