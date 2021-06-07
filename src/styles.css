@@ -15,20 +15,38 @@ body {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }  
 
-.is-hidden {
-  display: none;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+/*кнопка load-more  */
+/* .is-hidden {
+  display: none;
+} */
 
 .search-form {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 50px; /* отступ до картинок */
 }
 
 .search-input {
   margin-right: 10px;
-  font-size: 20px;
-  border: 1px solid grey;
+  /* font-size: 30px;
+  border: 1px solid #cecece; */
+
+  width: 300px;
+  font-size: 30px;
+  padding: 6px 0 4px 10px;
+  border: 1px solid #cecece;
+  /* background: #f6f6f6; */
+  border-radius: 8px; 
+}
+input:focus {
+  outline: none;
+  border: 3px solid #3498db;
 }
 
 .gallery {
@@ -36,32 +54,60 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+/*  
+ .gallery {
+  display: grid;
+  justify-content: center;
+  column-gap: 15px;
+  grid-template-columns: repeat(auto-fit, 300px);
+}  */
 
-ul {
-  list-style: none;
-}
+
 
 .stats {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  /* align-items: baseline; */
+}
+.stats-item {
+  display: flex;
 }
 
+.material-icons {
+  margin-right: 2px;
+  color: dodgerblue;
+}
+
+button {
+  box-sizing: border-box;
+  background-color: white;
+  border: 2px solid #3498db;
+  border-radius: 0.6em;
+  cursor: pointer;
+  align-self: center;
+  line-height: 1;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  /* color: #fff; */
+  /* box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db; */
+  transition: all 150ms ease-in-out;
+}
+
+button:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  color: #5c5c5c;
+}
 .loadbtn-container {
   text-align: center;
 }
 
 .load-more {
-  display: none;
-  border: transparent;
-  border-radius: 4px;
+  display: none; /* нужен при classList.add('show') */
   font-size: 20px;
-}
-
-
-.material-icons {
-  margin-right: 5px;
-  color: dodgerblue;
 }
 
 /* кнопка up */

@@ -38,13 +38,13 @@ function renderPictures(data) {
       }
       //картинки
     galleryRef.insertAdjacentHTML('beforeend', picturesTpl(data));
-    //кнопку load-more если is-hidden. 12 картинок
+  //кнопка load-more если is-hidden. 12 картинок
     // if (data.length < 12) {
     //     buttonRef.classList.add('is-hidden');
     //   } else {
     //     buttonRef.classList.remove('is-hidden');
     //   }
- //кнопку load-more.
+
       buttonRef.classList.add('show');
       // кнопка up 
       upBtn.classList.add('show');
@@ -69,8 +69,9 @@ buttonRef.addEventListener('click', () => {
 galleryRef.addEventListener('click', (event) => {
   const modal = basicLightbox  //объект это
   .create(`
-  <img src=${event.target.dataset.source} width="800" height="600">
+  <img src=${event.target.dataset.source} width="1280" height="700">
 `)
+
     if (event.target.nodeName === 'IMG') {
       modal.show();
     }
